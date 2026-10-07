@@ -16,6 +16,10 @@ For a whole-document review:
 
 For a focused lookup, use `section` with `include_content=true`. For short focused edits, a direct file read is acceptable when the full relevant context fits comfortably in one read.
 
+When article review depends on surrounding content, use `related=true` on the initial `document_context` call. This exposes deterministic relationships such as the parent Series, ordered sibling Articles, Project links, explicit related Notes, and configured Note scopes.
+
+Use the relationship graph for discovery, then read only the related documents needed for the review objective. Do not ingest every related Note body automatically.
+
 ## Content rules
 
 - `src/content/**` is the source of truth for Articles, Notes, Series, and Projects.
@@ -31,11 +35,13 @@ This repository should remain configuration-only with respect to DevTool capabil
 
 ```text
 document_context
-  -> document-structure service
-  -> configured document provider
+  ├─ document-structure service
+  │    └─ configured document provider
+  └─ document-relations service
+       └─ configured relation provider
 ```
 
-Provider choice belongs in `.devtool.toml`. Agent instructions must not depend on Goldmark, Marksman, Serena, or another concrete provider.
+Provider choice belongs in `.devtool.toml`. Agent instructions must not depend on Goldmark, `document.relations.content`, Marksman, Serena, or another concrete provider.
 
 ## SCM workflow
 
