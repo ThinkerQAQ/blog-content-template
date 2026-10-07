@@ -8,13 +8,13 @@ Use DevTool's stable `document_context` capability as the normal path for unders
 
 For a whole-document review:
 
-1. Call `document_context` with the document path and no section content to obtain the complete outline, frontmatter, and exact section ranges.
-2. Review each relevant top-level section with `section` and `include_content=true`.
-3. Track coverage across all top-level sections before making whole-document conclusions.
+1. Call `document_context` with `review=true` to obtain the complete outline plus explicit review coverage.
+2. Follow `next_cursor` until `complete=true`; each continuation returns exactly one top-level section body plus covered/remaining sections.
+3. Make whole-document conclusions only after the traversal reports complete coverage.
 4. Re-read only affected sections after edits; do not use one large raw read as the primary understanding mechanism for long articles.
-5. Keep structural claims grounded in the returned outline and section ranges.
+5. Keep structural claims grounded in returned outline, exact ranges, and review coverage.
 
-For short focused edits, a direct file read is acceptable when the full relevant context fits comfortably in one read.
+For a focused lookup, use `section` with `include_content=true`. For short focused edits, a direct file read is acceptable when the full relevant context fits comfortably in one read.
 
 ## Content rules
 
