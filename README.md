@@ -38,8 +38,10 @@ DevTool 负责提供稳定的文档理解与 SCM 能力，仓库本身只保留�
 
 ```text
 document_context
-  -> document-structure
-  -> document.markdown.goldmark
+  ├─ document-structure
+  │    └─ document.markdown.goldmark
+  └─ document-relations
+       └─ document.relations.content
 
 scm_checkpoint / scm_publish
   -> scm.github
@@ -57,7 +59,9 @@ document_context(review=true)
   -> 整篇结论
 ```
 
-这样 Agent 不需要一次读取整篇长文，也不需要自己记忆“哪些章节已经看过”，同时仍然不依赖具体的 Markdown Parser / LSP Provider。
+这样 Agent 不需要一次读取整篇长文，也不需要自己记忆“哪些章节已经看过”。当 Review 需要系列或笔记上下文时，初始调用加上 `related=true`，即可获得 Series、按顺序排列的 sibling Articles、Project 和 Note 关系图；具体相关文档正文仍按需读取。
+
+整个 Agent 工作流仍然不依赖具体的 Markdown Parser、Relation Provider 或 LSP Provider。
 
 首次使用时可以运行：
 

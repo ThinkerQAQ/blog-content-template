@@ -8,7 +8,7 @@ loader = "go-module"
 
 [extension.project.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/project/workspace/cmd/provider"
 
 [extension.project.settings]
@@ -19,7 +19,7 @@ loader = "go-module"
 
 [extension.document-capability.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/capability/document/cmd/provider"
 
 [extension.document-markdown]
@@ -27,18 +27,32 @@ loader = "go-module"
 
 [extension.document-markdown.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/document/markdown/cmd/provider"
 
 [extension.document-markdown.settings]
 roots = ["src/content"]
+
+[extension.document-relations]
+loader = "go-module"
+
+[extension.document-relations.loader_config]
+module = "github.com/thinkerqaq/devtool"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
+package = "./extensions/document/relations/content/cmd/provider"
+
+[extension.document-relations.settings]
+articles = "src/content/articles"
+series = "src/content/series"
+notes = "src/content/notes"
+projects = "src/content/projects"
 
 [extension.scm-capability]
 loader = "go-module"
 
 [extension.scm-capability.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/capability/scm/cmd/provider"
 
 [extension.credential-store]
@@ -46,7 +60,7 @@ loader = "go-module"
 
 [extension.credential-store.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/credential/file/cmd/provider"
 
 [extension.credential]
@@ -54,7 +68,7 @@ loader = "go-module"
 
 [extension.credential.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/credential/github/cmd/provider"
 
 [extension.scm]
@@ -62,11 +76,14 @@ loader = "go-module"
 
 [extension.scm.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
+version = "6ed4eacb19d9c606d10e420ddc4dbb4fc3b710e8"
 package = "./extensions/scm/github/cmd/provider"
 
 [service.document-structure]
 provider = "document.markdown.goldmark"
+
+[service.document-relations]
+provider = "document.relations.content"
 
 [service.credential-store]
 provider = "credential.store.file"
