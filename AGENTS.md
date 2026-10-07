@@ -9,8 +9,8 @@ Use DevTool's stable `document_context` capability as the normal path for unders
 For a whole-document review:
 
 1. Call `document_context` with `review=true` to obtain the complete outline plus explicit review coverage.
-2. Follow `next_cursor` until `complete=true`; each continuation returns exactly one top-level section body plus covered/remaining sections.
-3. Make whole-document conclusions only after the traversal reports complete coverage.
+2. Follow `next_cursor` until `complete=true`; each continuation returns exactly one bounded review unit plus covered/remaining units.
+3. Large sections are recursively split by heading boundaries according to `review_max_lines`; make whole-document conclusions only after the traversal reports complete coverage.
 4. Re-read only affected sections after edits; do not use one large raw read as the primary understanding mechanism for long articles.
 5. Keep structural claims grounded in returned outline, exact ranges, and review coverage.
 
