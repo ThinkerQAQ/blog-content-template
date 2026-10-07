@@ -25,7 +25,48 @@ public/media/
 
 仓库内已经放了一组最小示例，用来展示 Article、Note、Series、Project 以及中英文内容之间的关系。
 
-与 Public Engine 一起使用：
+## DevTool V2
+
+模板已经包含：
+
+```text
+.devtool.toml
+AGENTS.md
+```
+
+DevTool 负责提供稳定的文档理解与 SCM 能力，仓库本身只保留配置：
+
+```text
+document_context
+  -> document-structure
+  -> document.markdown.goldmark
+
+scm_checkpoint / scm_publish
+  -> scm.github
+```
+
+长 Markdown 的标准 Review 流程是：
+
+```text
+完整 Outline
+  -> 精确 Section Range
+  -> 分章节读取
+  -> Coverage
+  -> 整篇结论
+```
+
+这样 Agent 不需要一次读取整篇长文，也不依赖具体的 Markdown Parser / LSP Provider。
+
+首次使用时可以运行：
+
+```bash
+devtool config validate
+devtool init
+```
+
+具体 Agent 工作约束见 [AGENTS.md](./AGENTS.md)。
+
+## 与 Public Engine 一起使用
 
 ```bash
 git clone https://github.com/ThinkerQAQ/ThinkerQAQ.github.io.git
