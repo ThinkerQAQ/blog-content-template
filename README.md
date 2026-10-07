@@ -53,13 +53,13 @@ scm_checkpoint / scm_publish
 document_context(review=true)
   -> 完整 Outline + Coverage
   -> next_cursor
-  -> 每次读取一个顶层 Section
+  -> 每次读取一个 bounded review unit
   -> covered / remaining
   -> complete=true
   -> 整篇结论
 ```
 
-这样 Agent 不需要一次读取整篇长文，也不需要自己记忆“哪些章节已经看过”。当 Review 需要系列或笔记上下文时，初始调用加上 `related=true`，即可获得 Series、按顺序排列的 sibling Articles、Project 和 Note 关系图；具体相关文档正文仍按需读取。
+较大的 Section 会按照 Heading 层级递归拆分，并受 `review_max_lines` 控制。这样 Agent 不需要一次读取整篇长文，也不需要自己记忆“哪些章节已经看过”。当 Review 需要系列或笔记上下文时，初始调用加上 `related=true`，即可获得 Series、按顺序排列的 sibling Articles、Project 和 Note 关系图；具体相关文档正文仍按需读取。
 
 整个 Agent 工作流仍然不依赖具体的 Markdown Parser、Relation Provider 或 LSP Provider。
 
