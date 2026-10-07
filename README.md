@@ -48,14 +48,16 @@ scm_checkpoint / scm_publish
 长 Markdown 的标准 Review 流程是：
 
 ```text
-完整 Outline
-  -> 精确 Section Range
-  -> 分章节读取
-  -> Coverage
+document_context(review=true)
+  -> 完整 Outline + Coverage
+  -> next_cursor
+  -> 每次读取一个顶层 Section
+  -> covered / remaining
+  -> complete=true
   -> 整篇结论
 ```
 
-这样 Agent 不需要一次读取整篇长文，也不依赖具体的 Markdown Parser / LSP Provider。
+这样 Agent 不需要一次读取整篇长文，也不需要自己记忆“哪些章节已经看过”，同时仍然不依赖具体的 Markdown Parser / LSP Provider。
 
 首次使用时可以运行：
 
