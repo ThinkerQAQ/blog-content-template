@@ -8,7 +8,7 @@ loader = "go-module"
 
 [extension.project.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/project/workspace/cmd/provider"
 
 [extension.project.settings]
@@ -19,7 +19,7 @@ loader = "go-module"
 
 [extension.document-capability.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/capability/document/cmd/provider"
 
 [extension.document-markdown]
@@ -27,7 +27,7 @@ loader = "go-module"
 
 [extension.document-markdown.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/document/markdown/cmd/provider"
 
 [extension.document-markdown.settings]
@@ -38,7 +38,7 @@ loader = "go-module"
 
 [extension.scm-capability.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/capability/scm/cmd/provider"
 
 [extension.credential-store]
@@ -46,7 +46,7 @@ loader = "go-module"
 
 [extension.credential-store.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/credential/file/cmd/provider"
 
 [extension.credential]
@@ -54,7 +54,7 @@ loader = "go-module"
 
 [extension.credential.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/credential/github/cmd/provider"
 
 [extension.scm]
@@ -62,7 +62,7 @@ loader = "go-module"
 
 [extension.scm.loader_config]
 module = "github.com/thinkerqaq/devtool"
-version = "a50d90b5e6008424e8e1a513837307bfcb4fe0a1"
+version = "1af157491864ca63c965c9afcd2d0dd141222ac1"
 package = "./extensions/scm/github/cmd/provider"
 
 [service.document-structure]
