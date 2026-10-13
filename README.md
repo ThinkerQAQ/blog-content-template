@@ -15,15 +15,24 @@ src/
 │   ├── note-translations/
 │   │   └── en/
 │   ├── projects/
-│   └── series/
+│   ├── series/
+│   ├── life/
+│   └── workout-summaries/
 └── data/
     └── content-manifest.json
 
 public/media/
-└── articles/
+├── articles/
+└── life/
 ```
 
-仓库内已经放了一组最小示例，用来展示 Article、Note、Series、Project 以及中英文内容之间的关系。
+仓库内提供 Article、Note、Series、Project 及中英文示例，另有**完全虚构的摄影生活记录与健身月度统计**。此仓库是演示数据的唯一维护位置；博客引擎不再携带另一份内容副本。
+
+- `src/content/life/*.md`：摄影图文，含 1、4、9、12 张图片、长文案、草稿与年份归档示例。
+- `public/media/life/`：对应的缩略图与原尺寸示例（均为合成图）。
+- `src/content/workout-summaries/*.json`：按月聚合的虚构训练天数、时长和容量；不包含任何人的具体训练日、动作、重量或凭据。
+
+全部健身样例带有 `"demo": true`。演示内容不应与私有 BlogContent 混用，也不应被描述为真实同步结果。
 
 ## DevTool V2
 
@@ -76,7 +85,7 @@ devtool init
 
 ```bash
 git clone https://github.com/ThinkerQAQ/ThinkerQAQ.github.io.git
-git clone https://github.com/ThinkerQAQ/blog-content-template.git blog-content
+git clone https://github.com/ThinkerQAQ/blog-content-template.git blog-content-template
 ```
 
 完整的运行和部署方式见 [ThinkerQAQ.github.io README](https://github.com/ThinkerQAQ/ThinkerQAQ.github.io#readme)。

@@ -10,7 +10,6 @@ featured: true
 coverImage: "/media/articles/sample-article/cover.svg"
 coverImageAlt: "Sample article cover"
 series: sample-series
-project: sample-project
 translationOf: sample-article
 ---
 
